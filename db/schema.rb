@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2021_12_17_093703) do
 
-  create_table "tasks", charset: "utf8mb4", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "tasks", force: :cascade do |t|
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
